@@ -12,6 +12,7 @@ Esta es una aplicación de muestra para mostrar una lista de películas y series
 3. Instala las dependencias: `npm install`.
 4. Inicia la aplicación: `npm start`.
 5. Abre tu navegador y visita: [http://localhost:5173]
+6. Recuerde que apretando al logo vuelve a la apgina de Inicio/Home
 
 ## Características
 
