@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useGetSeriesQuery } from '../../../features/series/seriesApi.js';
-import { CardPoster } from '../../Card/Card';
+import CardPoster from '../../Card/Card.jsx';
+import MovieModal from '../../Modal/Modal.jsx';
 
 const Series = () => {
   const { data: series, error, isLoading } = useGetSeriesQuery();
+  const [selectedSeries, setSelectedSeries] = useState(null);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -13,11 +15,12 @@ const Series = () => {
     return <div>Error: {error.message}</div>;
   }
 
-  const filteredSeries = series?.filter((entry) => entry.releaseYear >= 2010)
-    .sort((a, b) => a.title.localeCompare(b.title));
-
-  // Tomar los primeros 20 resultados
+  const filteredSeries = series?.filter((entry) => entry.releaseYear >= 2010).sort((a, b) => a.title.localeCompare(b.title));
   const firstTwentyResults = filteredSeries.slice(0, 20);
+
+  const handleSeriesClick = (series) => {
+    setSelectedSeries(series);
+  };
 
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', margin: '1rem' }}>
@@ -27,11 +30,20 @@ const Series = () => {
           text={entry.title}
           description={entry.description}
           releaseYear={entry.releaseYear}
-          img={entry.images['Poster Art'].url || "https://www.shutterstock.com/image-vector/default-image-icon-vector-missing-260nw-2079504220.jpg"}
-        //   height={300}
+          img={entry.images['Poster Art'].url}
           link={entry.programType === 'movies' ? 'movies' : 'series'}
+          onClick={() => handleSeriesClick(entry)}
         />
       ))}
+      {selectedSeries && (
+        <MovieModal
+          title={selectedSeries?.title}
+          description={selectedSeries?.description}
+          releaseYear={selectedSeries?.releaseYear}
+          imageUrl={selectedSeries?.images['Poster Art'].url}
+          onClose={() => setSelectedSeries(null)}
+        />
+      )}
     </div>
   );
 };

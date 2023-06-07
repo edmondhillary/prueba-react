@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
+import { Modal, Card, Image } from 'antd';
 import { Link } from 'react-router-dom';
-import { Card } from 'antd';
 
-const defaultImageUrl = 'https://www.shutterstock.com/image-vector/default-image-icon-vector-missing-260nw-2079504220.jpg'; 
-
-export const CardPoster = ({ text, description, releaseYear, img, height }) => {
+const CardPoster = ({ text, description, releaseYear, img, height, onClick }) => {
   const [hovered, setHovered] = useState(false);
+  const defaultImageUrl =
+    'https://www.shutterstock.com/image-vector/default-image-icon-vector-missing-260nw-2079504220.jpg';
 
   const handleMouseEnter = () => {
     setHovered(true);
@@ -15,7 +15,18 @@ export const CardPoster = ({ text, description, releaseYear, img, height }) => {
     setHovered(false);
   };
 
-  const imageUrl = img || defaultImageUrl; // Utiliza la URL de la imagen original o la imagen por defecto si no está disponible
+  const handleModalClick = () => {
+    if (text !== 'Series' && text !== 'Peliculas') {
+      onClick();
+    }
+  };
+
+  const imageUrl = img || defaultImageUrl;
+
+  const handleImageError = (e) => {
+    e.target.onerror = null;
+    e.target.src = defaultImageUrl;
+  };
 
   return (
     <Card
@@ -29,9 +40,18 @@ export const CardPoster = ({ text, description, releaseYear, img, height }) => {
         position: 'relative',
         margin: '1rem',
       }}
-      cover={<img alt={text} src={imageUrl} style={{ height: '100%', objectFit: 'cover' }} />}
+      cover={
+        <Image
+          preview={false}
+          alt={text}
+          src={imageUrl}
+          style={{ height: '100%', objectFit: 'cover' }}
+          onError={handleImageError}
+        />
+      }
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onClick={handleModalClick}
     >
       <div
         style={{
@@ -45,7 +65,7 @@ export const CardPoster = ({ text, description, releaseYear, img, height }) => {
         }}
       >
         <Link
-          to={`/${text}`} // Modifica el enlace según tus necesidades
+          to={`/${text}`}
           style={{
             color: '#fff',
             fontSize: '16px',
@@ -72,3 +92,5 @@ export const CardPoster = ({ text, description, releaseYear, img, height }) => {
     </Card>
   );
 };
+
+export default CardPoster;

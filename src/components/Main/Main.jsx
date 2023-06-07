@@ -2,7 +2,7 @@ import React from "react";
 
 import imageLo from "../../assets/placeholder.png";
 
-import { CardPoster } from "../Card/Card";
+import CardPoster  from "../Card/Card";
 
 const Main = () => {
   return (
