@@ -8,7 +8,7 @@ import image3 from '../../assets/store/windows-store.svg';
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <footer className="footer non-sticky-footer ">
       <div className="links">
         <p href="#home">Home</p>
         <span></span>
@@ -16,7 +16,6 @@ const Footer = () => {
         <span></span>
         <p href="#privacy">Privacy Policy</p>
       </div>
-      {/* <p style={{textAlign: 'center'}}>© Copyright Memorandum</p> */}
       <div className="social-links">
         <div style={{marginTop: '2rem'}}>
           <a style={{margin: '1rem'}} href="https://www.facebook.com"><FacebookOutlined style={{fontSize: '3rem', color: 'white', margin: '0.3rem'}}/></a>
@@ -29,7 +28,8 @@ const Footer = () => {
           <img src={image3} alt="Image 3" />
         </div>
       </div>
-    </div>
+      <p style={{textAlign: 'center', color:'darkgray'}}>© Copyright Memorandum</p>
+    </footer>
   );
 };
 

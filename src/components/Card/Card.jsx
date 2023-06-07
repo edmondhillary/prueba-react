@@ -30,6 +30,7 @@ const CardPoster = ({ text, description, releaseYear, img, height, onClick }) =>
 
   return (
     <Card
+    className='card-hover'
       hoverable
       style={{
         width: 240,
