@@ -1,0 +1,30 @@
+.main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    height: 100vh;
+  }
+  
+  .card {
+    border: 1px solid #ccc;
+    width: calc(50% - 10px);  /* Para que las tarjetas ocupen aproximadamente la mitad del espacio cada una, restando un poco para el espacio entre ellas */
+    padding: 10px;
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .card a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .card a:hover {
+    text-decoration: underline;
+  }
+  

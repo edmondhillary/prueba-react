@@ -1,0 +1,42 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  height: 100%;
+  background-color: #ffffff;
+  color:#202020
+}
+.header-container{
+  display: block;
+}
+html,
+
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+.footer {
+  background-color: #202020;
+  color: #fff;
+  padding: 20px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+img{
+  object-fit: cover;
+}

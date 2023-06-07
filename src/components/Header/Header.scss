@@ -1,0 +1,22 @@
+.header {
+    width: 100%;
+    height: 20vh; /* Esto establecerá la altura a un 20% del tamaño de la vista */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .top {
+    background-color: #007AFF;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+  }
+  
+  .bottom {
+    background-color: #202020;
+    flex: 1;
+  }
+  

@@ -1,108 +1,48 @@
+# Películas App
 
-# Prueba técnica — React developer
+Esta es una aplicación de muestra para mostrar una lista de películas y series. Permite filtrar y ordenar los resultados según diferentes criterios.
 
+## Instrucciones de configuración y ejecución
 
-## Objetivo
+1. Clona este repositorio en tu máquina local.
+2. Navega al directorio del proyecto: `cd peliculas-app`.
+3. Instala las dependencias: `npm install`.
+4. Inicia la aplicación: `npm start`.
+5. Abre tu navegador y visita: [http://localhost:5173]
 
-El objetivo de esta prueba técnica es que el candidato muestre sus habilidades con las herramientas que utilizará luego en su trabajo diario en chedoc. Está diseñado para verificar las habilidades de desarrollo front-end utilizando React y su capacidad para resolver problemas.
+## Características
 
-Pondremos el foco en obtener un **código simple, bien diseñado y organizado, eficaz y testeado**, así como el cumplimiento de todos los requerimientos solicitados.
+- Muestra una lista de películas y series.
+- Permite filtrar los resultados según el año de lanzamiento (mayores o iguales a 2010).
+- Ordena los resultados alfabéticamente por título.
+- Proporciona una vista detallada de cada película o serie al hacer clic en su título.
+- El diseño es responsive y se adapta a diferentes tamaños de pantalla.
 
+## Decisiones técnicas y arquitectónicas
 
-## Desarrollo del proyecto
+Para desarrollar esta aplicación, se utilizaron las siguientes tecnologías y herramientas:
 
-- Se deberá clonar este repositorio para poder modificarlo y completarlo con la resolución del proyecto.
-- Una vez que su código esté listo, suba el código a un repositorio público propio y envíenos el enlace a dicho repositorio para que lo revisaremos.
+- React: Se eligió React como biblioteca principal para construir la interfaz de usuario debido a su eficiencia, reutilización de componentes y capacidad de manejar actualizaciones dinámicas de la interfaz de usuario.
+- React Router: Se utilizó React Router para manejar la navegación entre diferentes páginas y rutas de la aplicación.
+- Ant Design: Se utilizó la biblioteca Ant Design para los componentes de interfaz de usuario predefinidos, como la tarjeta de películas.
+- CSS: Se utilizó CSS para personalizar el estilo de los componentes y asegurar una apariencia visual coherente.
 
-> Se pueden utilizar herramientas como [create-react-app](https://github.com/facebook/create-react-app) y similares para inicializar el proyecto.
+## Mejoras posibles
 
+- Implementar paginación para mostrar más resultados en lugar de limitarlos a los primeros 20.
+- Agregar filtros adicionales, como género o calificación.
+- Mejorar la experiencia de usuario con animaciones y transiciones suaves.
+- Optimizar la carga de imágenes para mejorar el rendimiento y añadir imagenes defaiult de las imagenes ausentes.
 
-## Prueba técnica
-Usando la estructura vista en las imágenes proporcionadas como referencia, deberá crear un conjunto de pantallas y componentes React para crear la aplicación solicitada.
+## Consideraciones adicionales
 
-Se deberá incluir también `README` con instrucciones de configuración/ejecución y cualquier prueba u otra documentación que haya creado como parte de su solución.
+Si se me asignara más tiempo para este proyecto, me gustaría:
 
-Además, agregue la siguiente información a su archivo `README`:
+- Agregar pruebas unitarias y de integración para garantizar la calidad y estabilidad del código.
+- Mejorar la accesibilidad de la aplicación siguiendo las pautas y estándares establecidos.
+- Refactorizar y optimizar el código existente para mejorar el rendimiento y la legibilidad.
+- Implementar características adicionales, como la capacidad de agregar películas o series a una lista de favoritos.
+- Desplegar la aplicación en un servidor en la nube para que esté accesible en línea.
+- Organizar el CSS: Revisar y organizar el código CSS para mejorar su estructura y mantenibilidad. Aplicar metodologías de diseño como BEM (Block-Element-Modifier) para mantener un estilo consistente y escalable. Utilizar preprocesadores de CSS como Sass para facilitar la escritura y organización del código CSS.
 
-- ¿Cómo decidió las opciones técnicas y arquitectónicas utilizadas como parte de su solución?
-- ¿Hay alguna mejora que pueda hacer en su envío?
-- ¿Qué haría de manera diferente si se le asignara más tiempo?
-
-
-## Detalles
-Necesitará construir las siguientes 3 páginas con React:
-
-- Una página de "Inicio"
-- Una página de "Series"
-- Una página "Películas"
-
-Cree componentes para cada parte de la página (por ejemplo, encabezado, contenido, pie de página, etc.). Dentro de la carpeta `/assets` podrá encontrar distintas imágenes para utilizar.
-
-Las páginas también deben poder utilizarse en dispositivos móviles.
-
-Puede suponer que no tiene que admitir navegadores heredados sin funciones como `fetch` o `flexbox`.
-
-
-### Página de “Inicio”
-
-> Ejemplo de referencia [screens/1-home.jpg](./screens/1-home.jpg).
-
-Esta será su pantalla index.html.
-
-Deberá mostrar 2 bloques que conectarán con las páginas de "Series" y "Películas".
-
-
-### Páginas de “Serie” y “Películas”
-
-> Ejemplo de referencia [screens/2-series.jpg](./screens/2-series.jpg) y [screens/3-movies.jpg](./screens/3-movies.jpg).
-
-Para cada página debería leer los datos desde el archivo JSON [feed/sample.json](https://raw.githubusercontent.com/StreamCo/react-coding-challenge/master/feed/sample.json), luego:
-
-- Mostrar los primeros 20 resultados (`entries`). No es necesario paginar para ver más resultados. 
-- Mostrar sólo si contienen el atributo `releaseYear` >= `2010`
-- Ordenar los resultados por el atributo `title` de manera ascendente con órden alfanumérico
-- Para la página de "Series" usar resultados con `programType` igual a `series`.
-- Para la página de "Películas" usar resultados con `programType` igual a `movie`. 
-- Los atributos que debes utilizar para mostrar en la caja de cada resultado son:
-  - `title`
-  - `images` → `Poster Art` → `url`
-- Al posicionar el mouse sobre cada resultado la caja debe reducir su opacidad y mostrar borde blanco.
-- Al hacer click sobre el titulo deberá abrirse un popup mostrando la información completa:
-  - `title`
-  - `description`
-  - `releaseYear`
-  - `images` → `Poster Art` → `url`
-
-
-### Otras consideraciones
-
-También necesitará manejar los estados de carga/loading y error de obtener los datos desde el archivo JSON:
-
-- Estado de "Carga/Loading" [screens/1.1-loading.jpg](./screens/1.1-loading.jpg)
-- Estado de "Error" [screens/1.2-error.jpg](./screens/1.2-error.jpg)
-
-
-#### Opcional
-
-- Filtro por año
-  - agregar arriba del listado de series/películas un input que permita filtrar películas por año.
-- Paginación
-  - agregar un selector de cantidad de resultados a mostrar (5, 10, 20)
-  - permitir ir a próxima página de resultados o página anterior
-  - permitir moverse de página en página utilizando un parámetro en la URL
-
-
-## Requisitos de Stack
-
-Para el desarrollo de la aplicación deberá utilizar:
-
-- React / React Hooks
-- Redux
-- Librería de estilos (styled-components, CSS modules, o similar)
-- Mobile friendly
-- Unit tests (jest, react-testing-library, o similar)
-
-Importante saber:
-- No es necesario crear un entorno de desarrollo/producción.
-- Se pueden utilizar otras librerías que crea conveniente, aunque se recomienda proporcionar una solución básica ajustada a lo solicitado, ya que nuestro objetivo principal es evaluar sus habilidades con React y Javascript.
-- Como empresa, creemos que la comunicación es la clave del éxito. Entonces, si algo no está claro, o si tiene dudas sobre la tarea, consultanos!
+Recuerda que este es solo un ejemplo y puedes adaptar el README a tus necesidades y elecciones técnicas específicas.
