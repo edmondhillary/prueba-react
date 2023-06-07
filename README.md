@@ -4,7 +4,8 @@
 Esta es una aplicación de muestra para mostrar una lista de películas y series. Permite filtrar y ordenar los resultados según diferentes criterios.
 
 ![Inicio / Home ](https://github.com/edmondhillary/prueba-react/assets/114432145/8ef1d380-98b1-4cd8-8654-28d0eb62d6c0)
-![listado pelicula;s series ](https://github.com/ed  mondhillary/prueba-react/assets/114432145/f6feab88-c366-4f8d-86ab-94913438ebda)
+
+![Listado pelis/series](https://github.com/edmondhillary/prueba-react/assets/114432145/481d6809-0b89-4dfe-aca0-b7ef2091b57e)
 
 ![Filtro por año de pelicula/serie  ](https://github.com/edmondhillary/prueba-react/assets/114432145/fab50caa-c8a4-4eee-a8f6-7cc965be79b9)
 
