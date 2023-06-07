@@ -3,11 +3,7 @@
 
 Esta es una aplicación de muestra para mostrar una lista de películas y series. Permite filtrar y ordenar los resultados según diferentes criterios.
 
-![Inicio / Home ](https://github.com/edmondhillary/prueba-react/assets/114432145/8ef1d380-98b1-4cd8-8654-28d0eb62d6c0)
 
-![Listado pelis/series](https://github.com/edmondhillary/prueba-react/assets/114432145/481d6809-0b89-4dfe-aca0-b7ef2091b57e)
-
-![Filtro por año de pelicula/serie  ](https://github.com/edmondhillary/prueba-react/assets/114432145/fab50caa-c8a4-4eee-a8f6-7cc965be79b9)
 
 ## Instrucciones de configuración y ejecución
 
@@ -47,4 +43,10 @@ Si se me asignara más tiempo para este proyecto, me gustaría:
 - Implementar características adicionales, como la capacidad de agregar películas o series a una lista de favoritos.
 - Desplegar la aplicación en un servidor en la nube para que esté accesible en línea.
 
+## Imagenes del proyecto
+![Inicio / Home ](https://github.com/edmondhillary/prueba-react/assets/114432145/8ef1d380-98b1-4cd8-8654-28d0eb62d6c0)
+
+![Listado pelis/series](https://github.com/edmondhillary/prueba-react/assets/114432145/481d6809-0b89-4dfe-aca0-b7ef2091b57e)
+
+![Filtro por año de pelicula/serie  ](https://github.com/edmondhillary/prueba-react/assets/114432145/fab50caa-c8a4-4eee-a8f6-7cc965be79b9)
 
