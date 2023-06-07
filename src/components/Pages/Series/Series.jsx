@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useGetSeriesQuery } from "../../../features/series/seriesApi.js";
 import CardPoster from "../../Card/Card.jsx";
 import MovieModal from "../../Modal/Modal.jsx";
+import Header from "../../Header/Header.jsx";
 
 const Series = () => {
   const { data: series, error, isLoading } = useGetSeriesQuery();
@@ -25,6 +26,9 @@ const Series = () => {
   };
 
   return (
+    <>
+    <Header text='Popular Series'/>
+    
     <div
       style={{
         display: "flex",
@@ -54,6 +58,7 @@ const Series = () => {
         />
       )}
     </div>
+    </>
   );
 };
 

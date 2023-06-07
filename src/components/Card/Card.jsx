@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Modal, Card, Image } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const CardPoster = ({ text, description, releaseYear, img, height, onClick }) => {
+  const navigate = useNavigate()
   const [hovered, setHovered] = useState(false);
   const defaultImageUrl =
     'https://www.shutterstock.com/image-vector/default-image-icon-vector-missing-260nw-2079504220.jpg';
@@ -18,6 +19,9 @@ const CardPoster = ({ text, description, releaseYear, img, height, onClick }) =>
   const handleModalClick = () => {
     if (text !== 'Series' && text !== 'Peliculas') {
       onClick();
+    }
+    else{
+      navigate(`/${text}`)
     }
   };
 

@@ -11,7 +11,7 @@ const Header = ({text}) => {
       <div className="top">
       <h2><Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>DEMO Streaming</Link></h2>
         <div>
-          <AntdButton type="secondary">Login</AntdButton>
+          <AntdButton type="secondary" style={{color: 'white', fontWeight: 'bold'}}>Login</AntdButton>
           <Button>Start your free trial</Button>
         </div>
       </div>

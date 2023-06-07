@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useGetMoviesQuery } from '../../../features/movies/moviesApi.js';
 import CardPoster from '../../Card/Card.jsx';
 import MovieModal from '../../Modal/Modal.jsx';
+import Header from '../../Header/Header.jsx';
 
 const Peliculas = () => {
   const { data: movies, error, isLoading } = useGetMoviesQuery();
@@ -23,6 +24,8 @@ const Peliculas = () => {
   };
 
   return (
+  <>
+    <Header text='Popular Movies'/>
     <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', margin: '1rem' }}>
       {firstTwentyResults.map((entry) => (
         <CardPoster
@@ -45,6 +48,7 @@ const Peliculas = () => {
         />
       )}
     </div>
+  </>
   );
 };
 
