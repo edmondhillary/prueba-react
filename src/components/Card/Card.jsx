@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
-import { Modal, Card, Image } from 'antd';
+import React, { useState, useEffect } from 'react';
+import { Modal, Card, Image, Spin } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
+import { LoadingOutlined } from '@ant-design/icons';
 
 const CardPoster = ({ text, description, releaseYear, img, height, onClick }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [hovered, setHovered] = useState(false);
+  const [loading, setLoading] = useState(true);
   const defaultImageUrl =
     'https://www.shutterstock.com/image-vector/default-image-icon-vector-missing-260nw-2079504220.jpg';
 
@@ -19,9 +21,8 @@ const CardPoster = ({ text, description, releaseYear, img, height, onClick }) =>
   const handleModalClick = () => {
     if (text !== 'Series' && text !== 'Peliculas') {
       onClick();
-    }
-    else{
-      navigate(`/${text}`)
+    } else {
+      navigate(`/${text}`);
     }
   };
 
@@ -32,9 +33,19 @@ const CardPoster = ({ text, description, releaseYear, img, height, onClick }) =>
     e.target.src = defaultImageUrl;
   };
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const antIcon = <LoadingOutlined style={{ fontSize: 24 , display: 'flex', justifyContent: 'center', alignItems: 'center'}} spin />;
+
   return (
     <Card
-    className='card-hover'
+      className="card-hover"
       hoverable
       style={{
         width: 240,
@@ -46,13 +57,19 @@ const CardPoster = ({ text, description, releaseYear, img, height, onClick }) =>
         margin: '1rem',
       }}
       cover={
-        <Image
-          preview={false}
-          alt={text}
-          src={imageUrl}
-          style={{ height: '100%', objectFit: 'cover' }}
-          onError={handleImageError}
-        />
+        loading ? (
+          <div style={{ height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <Spin style={{ fontSize: 24 , display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop:'2rem'}} indicator={antIcon} />
+          </div>
+        ) : (
+          <Image
+            preview={false}
+            alt={text}
+            src={imageUrl}
+            style={{ height: '100%', objectFit: 'cover' }}
+            onError={handleImageError}
+          />
+        )
       }
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

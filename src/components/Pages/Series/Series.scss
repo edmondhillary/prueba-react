@@ -1,0 +1,19 @@
+.series-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  .custom-select {
+    border-color: #202020;
+  }
+  
+ 
+  @media (max-width: 768px) {
+    .series-container {
+    //   padding: 0 1rem;
+      justify-content: center; 
+    }
+  }

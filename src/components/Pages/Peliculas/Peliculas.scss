@@ -1,0 +1,25 @@
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+  }
+  
+  .movies-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .movies-container {
+    //   padding: 0 1rem;
+      justify-content: center; 
+    }
+  }
+  
