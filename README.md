@@ -23,6 +23,7 @@ Esta es una aplicación de muestra para mostrar una lista de películas y series
 Para desarrollar esta aplicación, se utilizaron las siguientes tecnologías y herramientas:
 
 - React: Se eligió React como biblioteca principal para construir la interfaz de usuario debido a su eficiencia, reutilización de componentes y capacidad de manejar actualizaciones dinámicas de la interfaz de usuario.
+- Redux
 - React Router: Se utilizó React Router para manejar la navegación entre diferentes páginas y rutas de la aplicación.
 - Ant Design: Se utilizó la biblioteca Ant Design para los componentes de interfaz de usuario predefinidos, como la tarjeta de películas.
 - CSS: Se utilizó CSS para personalizar el estilo de los componentes y asegurar una apariencia visual coherente.
